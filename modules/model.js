@@ -1,11 +1,9 @@
 class Model {
   
     constructor(props){
-        let title
         let entries = Object.entries(props)
         entries.forEach (([prop, params]) => {
             console.log(prop)
-            // values[prop.name] = prop.value
             Object.defineProperty(
                 this, 
                 prop, 
