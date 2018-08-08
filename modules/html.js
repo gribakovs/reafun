@@ -6,7 +6,17 @@ let html = (strings,...values) => {
     return str
 }
 
+let append = (parent, children) => {
+    children.forEach(
+        (child) => {
+            parent.appendChild(child)
+        }
+    )
+
+}
+
 let node = (tag, props, children) => {
+    console.log(tag)
     let obj = document.createElement(tag)
     Object.assign(obj,props)
     append(obj,children)
@@ -144,17 +154,9 @@ let svg = (props, children) => node ("svg", props, children)
 let text = (props, children) => node ("text", props, children)
 let tspan = (props, children) => node ("tspan", props, children)
 
-let append = (parent, children) => {
-    children.forEach(
-        (child) => {
-            parent.appendChild(child)
-        }
-    )
-
-}
-
 export {
     html,
+    node,
     a,
     abbr,
     address,
