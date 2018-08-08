@@ -66,10 +66,14 @@ let render = (model) => {
 
 let update = (e) => {
     console.log (`message received from worker`)
-
-    model.title = e.data.title
-    model.description = e.data.description
-    model.model = JSON.stringify(e.data)
+    Object.assign(
+        model,
+        { 
+            title: e.data.title,
+            description: e.data.description,
+            model: JSON.stringify(e.data)
+        }
+    )
 }
 
 let dispatcher = Dispatcher.create (
