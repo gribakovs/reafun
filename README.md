@@ -1,1 +1,1 @@
-Reafun reative functional framework for development of PWA application
+Reafun is a simple reactive functional framework for development of PWA applications
