@@ -8,10 +8,9 @@ let html = (strings,...values) => {
 
 let node = (tag, props, children) => {
     let obj = document.createElement(tag)
-        Object.assign(obj,props)
-        append(obj,children);
-        // parent.appendChild(obj)
-        return obj
+    Object.assign(obj,props)
+    append(obj,children)
+    return obj
 }
 
 let a = (props, children) => node ("a", props, children)
