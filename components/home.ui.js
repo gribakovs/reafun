@@ -1,6 +1,6 @@
 
-import {html,span,div,append} from "/modules/html.js"
-import {define} from "/modules/component.js"
+import {html,span,div,append} from "../modules/html.js"
+import {define} from "../modules/component.js"
 
 let oninit = (host) => {
     let props = {
@@ -70,17 +70,17 @@ let onevent = (e) => {
 
 }
 
-let message = {
-    cmd: "updateTitle",
-    params: {
-        title: "my home page"
-    },
-    status: status
-}
 
-let render = (onrender,oninit,onupdate,onevent, message) => {
 
-    let app = define("rf-app", oninit, onrender, onupdate, onevent, "app.dispatcher.js", message)
+let render = (params) => {
+
+    let message = {
+        cmd: "updateTitle",
+        params: params,
+        status: status
+    }
+
+    let app = define("rf-app", oninit, onrender, onupdate, onevent, "/components/home.api.js", message)
     console.log (app)
 
     append(
@@ -95,22 +95,8 @@ let render = (onrender,oninit,onupdate,onevent, message) => {
 
 }
 
+export {render}
 
-// let dispatcher = Dispatcher.create (
-//         "app.dispatcher.js", update     
-//     )
-
-
-
-render(onrender,oninit,onupdate,onevent,message)
-
-
-// Dispatcher.dispatch (dispatcher, message)
-
-
-// let dispatch = (message) => {
-//     console.log (message)
-// }
 
 // let createWorker = (fn) => {
 //     return new Worker(URL.createObjectURL(new Blob(['('+fn+')()'])));
@@ -124,5 +110,3 @@ render(onrender,oninit,onupdate,onevent,message)
 // );
   
 // worker.onmessage = (event) => console.log(event.data);
-
-// // dispatch (message)

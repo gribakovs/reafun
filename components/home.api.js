@@ -1,4 +1,4 @@
-let cmds = {
+let api = {
     updateTitle: async (e) => { 
         console.log ("execute updateTitle")
 
@@ -14,7 +14,7 @@ let cmds = {
             return await response.json()
         }
 
-        let url = 'data/app.json'
+        let url = '/data/app.json'
         let data = await getData(url)
 
         console.log (data)
@@ -25,7 +25,7 @@ let cmds = {
 
 onmessage = async (e) => {
     console.log ("message received from main script")
-    let model = await cmds[e.data.cmd](e)
+    let model = await api[e.data.cmd](e)
 
     console.log ("posting message back to main script")
     postMessage (model)
