@@ -1,5 +1,5 @@
 
-import {span,div,a,append} from "../modules/html.js"
+import {span,div,a,h3,button,append,assign} from "../modules/html.js"
 import {define} from "../modules/component.js"
 
 let oninit = (host) => {
@@ -41,25 +41,52 @@ let oninit = (host) => {
     //     </div>
     // </div>
 
+    // <div class="uk-container">
+    //     <div class="uk-card uk-card-body uk-card-primary">
+    //         <h3 class="uk-card-title">Example headline</h3>
+
+    //         <button class="uk-button uk-button-default" uk-tooltip="title: Hello World">Hover</button>
+    //     </div>
+    // </div>
+
 let onrender = (model) => {
     let children = 
-        [ div (   
-            [ ["class", "uk-navbar-container"]
-            , ["uk-navbar", ""]
-            ],[]
+        [ div (
+            [ ["class","uk-container"]
+            ],[ div (
+                  [ ["class","uk-card uk-card-body uk-card-primary"]
+                  ],[ assign (
+                        h3 (
+                            [ ["class","uk-card-title"]
+                            ],[]
+                        ), { textContent: "Example headline" }
+                    )
+                    , assign (
+                        button (
+                            [ ["class","uk-button uk-button-default"] 
+                            , ["uk-tooltip", "title: Hello World"]                          
+                            ],[]
+                        ), { textContent: "Hover" }
+                      )
+                    ]                
+                )
+              ]
           )
-        , div (   
-            [ ["class", "uk-navbar-left"]
-            ]
-            , 
-            [ a (
-                [ [ "class", "uk-navbar-toggle"]
-                , [ "uk-navbar-toggle-icon", ""]
-                , [ "href", ""]                   
-                ], []
-              )
-            ]
-          )
+        // , div (   
+        //     [ ["class", "uk-navbar-container"]
+        //     , ["uk-navbar", ""]
+        //     ],[]
+        //   )
+        // , div (   
+        //     [ ["class", "uk-navbar-left"]
+        //     ],[ a (
+        //         [ [ "class", "uk-navbar-toggle"]
+        //         , [ "uk-navbar-toggle-icon", ""]
+        //         , [ "href", ""]                   
+        //         ], []
+        //         )
+        //     ]
+        //   )
         , div (   
             [],
             [ span (
@@ -113,7 +140,7 @@ let render = (params) => {
         status: status
     }
 
-    let app = define("rf-app", oninit, onrender, onupdate, onevent, "/components/home.api.js", message)
+    let app = define("rf-app", oninit, onrender, onupdate, onevent, "api/home.api.js", message)
     console.log (app)
 
     append(

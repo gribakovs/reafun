@@ -33,6 +33,10 @@ let node = (tag, attrs, children) => {
     return obj
 }
 
+let assign = (node, props) => {
+    return Object.assign(node,props)
+}
+
 let a = (attrs, children) => node ("a", attrs, children)
 let abbr = (attrs, children) => node ("abbr", attrs, children)
 let address = (attrs, children) => node ("address", attrs, children)
@@ -167,6 +171,7 @@ let tspan = (attrs, children) => node ("tspan", attrs, children)
 export {
     html,
     node,
+    assign,
     a,
     abbr,
     address,
