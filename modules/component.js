@@ -12,9 +12,10 @@ let define = (tag, oninit, onrender, onupdate, onevent, path, message) => {
             let children = onrender(model)
             append(shadow,children)
 
+            console.log(shadow.innerHTML)
+
             let update = (e) => {
                 let newmodel = onupdate(e)
-                console.log(JSON.stringify(newmodel))
                 Object.assign(
                     model, newmodel
                 )

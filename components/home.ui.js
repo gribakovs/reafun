@@ -1,5 +1,5 @@
 
-import {html,span,div,append} from "../modules/html.js"
+import {span,div,a,append} from "../modules/html.js"
 import {define} from "../modules/component.js"
 
 let oninit = (host) => {
@@ -33,26 +33,59 @@ let oninit = (host) => {
     return props
 }
 
+
+
+    // <div class="uk-navbar-container" uk-navbar>
+    //     <div class="uk-navbar-left">
+    //         <a class="uk-navbar-toggle" uk-navbar-toggle-icon href=""></a>
+    //     </div>
+    // </div>
+
 let onrender = (model) => {
-    let children = [
-        div ({},
-            [ 
-                span ({
-                    id: "title",
-                    textContent: "title"
-                },[]),
-                div({}, [
-                    span ({
-                        id: "description",
-                        textContent: "description"
-                    }, []),
-                div ({
-                    id: "model",
-                    textContent: "model"
-                }, [])
-                ])
-            ])                           
-    ]
+    let children = 
+        [ div (   
+            [ ["class", "uk-navbar-container"]
+            , ["uk-navbar", ""]
+            ],[]
+          )
+        , div (   
+            [ ["class", "uk-navbar-left"]
+            ]
+            , 
+            [ a (
+                [ [ "class", "uk-navbar-toggle"]
+                , [ "uk-navbar-toggle-icon", ""]
+                , [ "href", ""]                   
+                ], []
+              )
+            ]
+          )
+        , div (   
+            [],
+            [ span (
+                [ ["id", "title"]
+                , ["text", "title"]
+                ], []
+              )
+            , div (
+                [], 
+                [ span (  
+                    [ ["id", "description"]
+                    , ["textContent", "description"]
+                    ]
+                    , []
+                  )
+                , div (
+                    [ ["id", "model"]
+                    , ["text", "model"]
+                    ]
+                    , []
+                  )
+                ]
+              )
+            ]
+          )                           
+        ]
     return children
 }
 
@@ -86,7 +119,7 @@ let render = (params) => {
     append(
         document.body, 
         [
-            app ({},[])
+            app ([],[])
         ]
     ) 
 
