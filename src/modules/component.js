@@ -21,7 +21,7 @@ let define = (tag, oninit, onrender, onupdate, onevent, path, message) => {
                 uikitIcons.src = "./assets/uikit/js/uikit-icons.min.js"
 
             let uikitLoader = document.createElement ('script')
-                uikitLoader.src = "./uikitloader.js"
+                uikitLoader.src = "./scripts/uikitloader.js"
 
   
             

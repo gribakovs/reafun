@@ -51,27 +51,27 @@ let oninit = (host) => {
 
 let onrender = (model) => {
     let children = 
-        [ div (
-            [ ["class","uk-container"]
-            ],[ div (
-                  [ ["class","uk-card uk-card-body uk-card-primary"]
-                  ],[ assign (
-                        h3 (
-                            [ ["class","uk-card-title"]
-                            ],[]
-                        ), { textContent: "Example headline" }
-                    )
-                    , assign (
-                        button (
-                            [ ["class","uk-button uk-button-default"] 
-                            , ["uk-tooltip", "title: Hello World"]                          
-                            ],[]
-                        ), { textContent: "Hover" }
-                      )
-                    ]                
-                )
-              ]
-          )
+        // [ div (
+        //     [ ["class","uk-container"]
+        //     ],[ div (
+        //           [ ["class","uk-card uk-card-body uk-card-primary"]
+        //           ],[ assign (
+        //                 h3 (
+        //                     [ ["class","uk-card-title"]
+        //                     ],[]
+        //                 ), { textContent: "Example headline" }
+        //             )
+        //             , assign (
+        //                 button (
+        //                     [ ["class","uk-button uk-button-default"] 
+        //                     , ["uk-tooltip", "title: Hello World"]                          
+        //                     ],[]
+        //                 ), { textContent: "Hover" }
+        //               )
+        //             ]                
+        //         )
+        //       ]
+        //   )
         // , div (   
         //     [ ["class", "uk-navbar-container"]
         //     , ["uk-navbar", ""]
@@ -87,7 +87,7 @@ let onrender = (model) => {
         //         )
         //     ]
         //   )
-        , div (   
+        [ div (   
             [],
             [ span (
                 [ ["id", "title"]
@@ -140,7 +140,7 @@ let render = (params) => {
         status: status
     }
 
-    let app = define("rf-app", oninit, onrender, onupdate, onevent, "api/home.api.js", message)
+    let app = define("rf-app", oninit, onrender, onupdate, onevent, "./scripts/homeapi.js", message)
     console.log (app)
 
     append(
