@@ -1,5 +1,5 @@
 
-import {span,div,a,h3,button,append,assign} from "../modules/html.js"
+import {span,div,a,h3,button,append,assign} from "../modules/elements.js"
 import {define} from "../modules/component.js"
 
 let oninit = (host) => {
@@ -51,27 +51,27 @@ let oninit = (host) => {
 
 let onrender = (model) => {
     let children = 
-        // [ div (
-        //     [ ["class","uk-container"]
-        //     ],[ div (
-        //           [ ["class","uk-card uk-card-body uk-card-primary"]
-        //           ],[ assign (
-        //                 h3 (
-        //                     [ ["class","uk-card-title"]
-        //                     ],[]
-        //                 ), { textContent: "Example headline" }
-        //             )
-        //             , assign (
-        //                 button (
-        //                     [ ["class","uk-button uk-button-default"] 
-        //                     , ["uk-tooltip", "title: Hello World"]                          
-        //                     ],[]
-        //                 ), { textContent: "Hover" }
-        //               )
-        //             ]                
-        //         )
-        //       ]
-        //   )
+        [ div (
+            [ ["class","uk-container"]
+            ],[ div (
+                  [ ["class","uk-card uk-card-body uk-card-primary"]
+                  ],[ assign (
+                        h3 (
+                            [ ["class","uk-card-title"]
+                            ],[]
+                        ), { textContent: "Example headline" }
+                    )
+                    , assign (
+                        button (
+                            [ ["class","uk-button uk-button-default"] 
+                            , ["uk-tooltip", "title: Hello World"]                          
+                            ],[]
+                        ), { textContent: "Hover" }
+                      )
+                    ]                
+                )
+              ]
+          )
         // , div (   
         //     [ ["class", "uk-navbar-container"]
         //     , ["uk-navbar", ""]
@@ -87,7 +87,7 @@ let onrender = (model) => {
         //         )
         //     ]
         //   )
-        [ div (   
+        , div (   
             [],
             [ span (
                 [ ["id", "title"]

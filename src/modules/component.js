@@ -1,6 +1,7 @@
-import {node, append} from "./html.js"
+import {node, append} from "./elements.js"
 import * as Dispatcher from "./dispatcher.js"
 import * as Model from "./model.js"
+// import {style} from "./uikitcss.js"
 
 
 
@@ -9,7 +10,7 @@ let define = (tag, oninit, onrender, onupdate, onevent, path, message) => {
         constructor(){
             super()
 
-            
+            //console.log(style)
             
             let style = document.createElement ('style')
                 style.textContent = `@import "./assets/uikit/css/uikit-shadow.css";`
@@ -23,20 +24,18 @@ let define = (tag, oninit, onrender, onupdate, onevent, path, message) => {
             let uikitLoader = document.createElement ('script')
                 uikitLoader.src = "./scripts/uikitloader.js"
 
-  
-            
             let shadow = this.attachShadow({mode: "open"})
-                shadow.appendChild(style)
+            let props = oninit(shadow)
+            let model = Model.create(props)
+            let children = onrender(model)
+
+                shadow.appendChild(style)         
+                append(shadow,children)
                 shadow.appendChild(uikitScript)
                 shadow.appendChild(uikitIcons)
                 shadow.appendChild(uikitLoader)
 
-            let props = oninit(shadow)
-            let model = Model.create(props)
-            let children = onrender(model)
-            append(shadow,children)
-
-            console.log(shadow.innerHTML)
+                console.log(shadow.innerHTML)
 
             let update = (e) => {
                 let newmodel = onupdate(e)
