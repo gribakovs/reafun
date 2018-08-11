@@ -3,7 +3,9 @@
 let append = (parent, children) => {
     children.forEach(
         (child) => {
-            parent.appendChild(child)
+            typeof child == "string"
+            ? parent.appendChild(document.createTextNode(child))
+            : parent.appendChild(child)
         }
     )
 
@@ -12,18 +14,11 @@ let append = (parent, children) => {
 let node = (tag, attrs, children) => {
     console.log(tag)
     let obj = document.createElement(tag)
-    
-    // Object.assign(obj,attrs)
-
-    // let some = [
-    //     ["gr-1",true],
-    //     ["gr-2","true"]
-    // ]
 
     attrs.forEach( ([attr,value]) => obj.setAttribute(attr,value) )
 
-
     append(obj,children)
+
     return obj
 }
 

@@ -13,26 +13,32 @@ let define = (tag, oninit, onrender, onupdate, onevent, path, message) => {
             //console.log(style)
             
             let style = document.createElement ('style')
-                style.textContent = `@import "./assets/uikit/css/uikit-shadow.css";`
+                //   style.textContent = `@import "./assets/uikit/css/uikit-shadow.css";`
+                  style.textContent = `@import "./assets/bulma/bulma.min.css";`
 
-            let uikitScript = document.createElement ('script')
-                uikitScript.src = "./assets/uikit/js/uikit.min.js"
+            // let uikitScript = document.createElement ('script')
+            //     uikitScript.src = "./assets/uikit/js/uikit.min.js"
 
-            let uikitIcons = document.createElement ('script')
-                uikitIcons.src = "./assets/uikit/js/uikit-icons.min.js"
+            // let uikitIcons = document.createElement ('script')
+            //     uikitIcons.src = "./assets/uikit/js/uikit-icons.min.js"
+            let fonts = document.createElement ('script')
+                 fonts.src = "https://use.fontawesome.com/releases/v5.1.0/js/all.js"
+                 fonts.defer = true
 
             let uikitLoader = document.createElement ('script')
-                uikitLoader.src = "./scripts/uikitloader.js"
+                 uikitLoader.src = "./scripts/uikitloader.js"
 
             let shadow = this.attachShadow({mode: "open"})
             let props = oninit(shadow)
             let model = Model.create(props)
             let children = onrender(model)
 
-                shadow.appendChild(style)         
+                shadow.appendChild(style)   
+                shadow.appendChild(fonts)
+
                 append(shadow,children)
-                shadow.appendChild(uikitScript)
-                shadow.appendChild(uikitIcons)
+                // shadow.appendChild(uikitScript)
+                // shadow.appendChild(uikitIcons)
                 shadow.appendChild(uikitLoader)
 
                 console.log(shadow.innerHTML)

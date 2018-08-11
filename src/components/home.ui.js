@@ -1,5 +1,6 @@
 
-import {span,div,a,h3,button,append,assign} from "../modules/elements.js"
+import {html} from "../modules/html.js"
+import {span,div,a,h3,button,section,p,h1,strong,append,assign} from "../modules/elements.js"
 import {define} from "../modules/component.js"
 
 let oninit = (host) => {
@@ -49,9 +50,57 @@ let oninit = (host) => {
     //     </div>
     // </div>
 
+//     <section class="section">
+//     <div class="container">
+//       <h1 class="title">
+//         Hello World
+//       </h1>
+//       <p class="subtitle">
+//         My first website with <strong>Bulma</strong>!
+//       </p>
+//     </div>
+//   </section>
+
+
 let onrender = (model) => {
+    let title = h1 ([["class","title"]],["Hello World!"])
+        // title.textContent = "Hello World!"
+
+    let subtitle = p ([[ "class","subtitle" ]],["My first website with ", strong ([],["Bulma"]) ])
+        // subtitle.textContent = "My first website with Bulma"
+
+    let bulma = div ( [],[] )
+        bulma.innerHTML = html`
+         <section class="section">
+            <div class="container">
+            <h1 class="title">
+                Hello World
+            </h1>
+            <p class="subtitle">
+                My first website with <strong>Bulma</strong>!
+            </p>
+            </div>
+        </section>
+    `
+
+    let mybulma = div ( [],[] )
+        mybulma.appendChild(
+            section (
+                [ [ "class", "section"]
+                ],[ div (
+                      [ ["class","container"] 
+                      ],[ title, subtitle
+                      ]
+                    )
+    
+                ]
+              )
+        )
+
     let children = 
-        [ div (
+        [ bulma
+        , mybulma
+        , div (
             [ ["class","uk-container"]
             ],[ div (
                   [ ["class","uk-card uk-card-body uk-card-primary"]

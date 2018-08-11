@@ -3,12 +3,13 @@
    Component: Base
  ========================================================================== */
 /*
- * 1. Set `font-size` to support `rem` units
- *    Not using `font` property because a leading hyphen (e.g. -apple-system) causes the font to break in IE11 and Edge
+ * 1. Set 'font-size' to support 'rem' units
+ *    Not using 'font' property because a leading hyphen (e.g. -apple-system) causes the font to break in IE11 and Edge
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  * 3. Style
  */
-html {
+ 
+ .uk-containe1 {
   /* 1 */
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   font-size: 16px;
@@ -17,15 +18,16 @@ html {
   /* 2 */
   -webkit-text-size-adjust: 100%;
   /* 3 */
-  background: #fff;
+  background: #32d296;
   color: #666;
 }
 /*
  * Remove the margin in all browsers.
  */
-body {
+/* body {
   margin: 0;
 }
+*/
 /* Links
  ========================================================================== */
 /*
@@ -76,8 +78,8 @@ strong {
   font-weight: bolder;
 }
 /*
- * 1. Consolas has a better baseline in running text compared to `Courier`
- * 2. Correct the odd `em` font sizing in all browsers.
+ * 1. Consolas has a better baseline in running text compared to 'Courier'
+ * 2. Correct the odd 'em' font sizing in all browsers.
  * 3. Style
  */
 :not(pre) > code,
@@ -127,7 +129,7 @@ small {
   font-size: 80%;
 }
 /*
- * Prevents `sub` and `sup` affecting `line-height` in all browsers.
+ * Prevents 'sub' and 'sup' affecting 'line-height' in all browsers.
  */
 sub,
 sup {
@@ -158,8 +160,8 @@ video {
 /*
  * Responsiveness
  * 1. Set a maximum width
- * 2. Auto scale the height. Only needed if `height` attribute is present
- * 2. Corrects `max-width` behavior if padding and border are used
+ * 2. Auto scale the height. Only needed if 'height' attribute is present
+ * 2. Corrects 'max-width' behavior if padding and border are used
  */
 audio,
 canvas,
@@ -179,7 +181,7 @@ svg:not(:root) {
   overflow: hidden;
 }
 /*
- * Hide `alt` text for lazy load images
+ * Hide 'alt' text for lazy load images
  * Selector for background while loading img[data-src*='.jpg'][src*='data:image'] { background: grey; }
  */
 img:not([src]) {
@@ -436,7 +438,7 @@ iframe {
 /* Prevent the 300ms delay for touchscreen interactions
  ========================================================================== */
 /*
- * Most browsers prevent the 300ms delay automatically for sites that use the `width=device-width` property.
+ * Most browsers prevent the 300ms delay automatically for sites that use the 'width=device-width' property.
  * For Safari on iOS 9.3+, IE 11 and Edge on desktops and IE 11 on Windows Phone 8.1 it must be applied manually.
  */
 a,
@@ -503,7 +505,7 @@ a.uk-link-heading:hover,
 /* Reset
  ========================================================================== */
 /*
- * `!important` needed to override inverse component
+ * '!important' needed to override inverse component
  */
 a.uk-link-reset,
 a.uk-link-reset:hover,
@@ -566,7 +568,7 @@ a.uk-link-reset:hover,
   position: relative;
 }
 /*
- * 1. Using `inline-block` to make it work with text alignment
+ * 1. Using 'inline-block' to make it work with text alignment
  * 2. Center vertically
  * 3. Style
  */
@@ -626,8 +628,8 @@ a.uk-link-reset:hover,
    Component: Divider
  ========================================================================== */
 /*
- * 1. Reset default `hr`
- * 2. Set margin if a `div` is used for semantical reason
+ * 1. Reset default 'hr'
+ * 2. Set margin if a 'div' is used for semantical reason
  */
 [class*='uk-divider'] {
   /* 1 */
@@ -667,7 +669,7 @@ a.uk-link-reset:hover,
 /* Small
  ========================================================================== */
 /*
- * Reset child height, caused by `inline-block`
+ * Reset child height, caused by 'inline-block'
  */
 .uk-divider-small {
   line-height: 0;
@@ -947,7 +949,7 @@ a.uk-link-reset:hover,
 /* Cell link modifier
  ========================================================================== */
 /*
- * Does not work with `uk-table-justify` at the moment
+ * Does not work with 'uk-table-justify' at the moment
  */
 .uk-table-link {
   padding: 0 !important;
@@ -1004,16 +1006,16 @@ a.uk-link-reset:hover,
    Component: Icon
  ========================================================================== */
 /*
- * Note: 1. - 7. is required for `button` elements. Needed for Close and Form Icon component.
+ * Note: 1. - 7. is required for 'button' elements. Needed for Close and Form Icon component.
  * 1. Remove margins in Chrome, Safari and Opera.
- * 2. Remove borders for `button`.
+ * 2. Remove borders for 'button'.
  * 3. Remove border-radius in Chrome.
- * 4. Address `overflow` set to `hidden` in IE.
- * 5. Correct `font` properties and `color` not being inherited for `button`.
+ * 4. Address 'overflow' set to 'hidden' in IE.
+ * 5. Correct 'font' properties and 'color' not being inherited for 'button'.
  * 6. Remove the inheritance of text transform in Edge, Firefox, and IE.
- * 7. Remove default `button` padding and background color
+ * 7. Remove default 'button' padding and background color
  * 8. Style
- * 9. Fill all SVG elements with the current text color if no `fill` attribute is set
+ * 9. Fill all SVG elements with the current text color if no 'fill' attribute is set
  * 10. Let the container fit the height of the icon
  */
 .uk-icon {
@@ -1040,7 +1042,7 @@ a.uk-link-reset:hover,
   /* 10 */
   line-height: 0;
 }
-/* Required for `button`. */
+/* Required for 'button'. */
 button.uk-icon:not(:disabled) {
   cursor: pointer;
 }
@@ -1274,13 +1276,13 @@ button.uk-icon:not(:disabled) {
  ========================================================================== */
 /*
  * 1. Define consistent box sizing.
- *    Default is `content-box` with following exceptions set to `border-box`
- *    `select`, `input[type="checkbox"]` and `input[type="radio"]`
- *    `input[type="search"]` in Chrome, Safari and Opera
- *    `input[type="color"]` in Firefox
+ *    Default is 'content-box' with following exceptions set to 'border-box'
+ *    'select', 'input[type="checkbox"]' and 'input[type="radio"]'
+ *    'input[type="search"]' in Chrome, Safari and Opera
+ *    'input[type="color"]' in Firefox
  * 2. Address margins set differently in Firefox/IE and Chrome/Safari/Opera.
- * 3. Remove `border-radius` in iOS.
- * 4. Change font properties to `inherit` in all browsers.
+ * 3. Remove 'border-radius' in iOS.
+ * 4. Change font properties to 'inherit' in all browsers.
  */
 .uk-input,
 .uk-select,
@@ -1309,8 +1311,8 @@ button.uk-icon:not(:disabled) {
   text-transform: none;
 }
 /*
- * 1. Change font properties to `inherit` in all browsers
- * 2. Don't inherit the `font-weight` and use `bold` instead.
+ * 1. Change font properties to 'inherit' in all browsers
+ * 2. Don't inherit the 'font-weight' and use 'bold' instead.
  * NOTE: Both declarations don't work in Chrome, Safari and Opera.
  */
 .uk-select optgroup {
@@ -1362,9 +1364,9 @@ button.uk-icon:not(:disabled) {
   padding: 0;
 }
 /* Input, select and textarea
- * Allowed: `text`, `password`, `datetime`, `datetime-local`, `date`,  `month`,
-            `time`, `week`, `number`, `email`, `url`, `search`, `tel`, `color`
- * Disallowed: `range`, `radio`, `checkbox`, `file`, `submit`, `reset` and `image`
+ * Allowed: 'text', 'password', 'datetime', 'datetime-local', 'date',  'month',
+            'time', 'week', 'number', 'email', 'url', 'search', 'tel', 'color'
+ * Disallowed: 'range', 'radio', 'checkbox', 'file', 'submit', 'reset' and 'image'
  ========================================================================== */
 /*
  * Remove default style in iOS.
@@ -1398,7 +1400,7 @@ button.uk-icon:not(:disabled) {
 }
 /*
  * Single-line
- * 1. Allow any element to look like an `input` or `select` element
+ * 1. Allow any element to look like an 'input' or 'select' element
  * 2. Make sure line-height is not larger than height
  *    Also needed to center the text vertically
  */
@@ -1456,7 +1458,7 @@ button.uk-icon:not(:disabled) {
 .uk-textarea::placeholder {
   color: #999;
 }
-/* Style modifier (`uk-input`, `uk-select` and `uk-textarea`)
+/* Style modifier ('uk-input', 'uk-select' and 'uk-textarea')
  ========================================================================== */
 /*
  * Small
@@ -1486,7 +1488,7 @@ button.uk-icon:not(:disabled) {
 .uk-form-large:not(select):not(input):not(textarea) {
   line-height: 53px;
 }
-/* Style modifier (`uk-input`, `uk-select` and `uk-textarea`)
+/* Style modifier ('uk-input', 'uk-select' and 'uk-textarea')
  ========================================================================== */
 /*
  * Error
@@ -1515,11 +1517,11 @@ button.uk-icon:not(:disabled) {
   border-color: #e5e5e5;
   border-style: dashed;
 }
-/* Width modifiers (`uk-input`, `uk-select` and `uk-textarea`)
+/* Width modifiers ('uk-input', 'uk-select' and 'uk-textarea')
  ========================================================================== */
 /*
  * Fixed widths
- * Different widths for mini sized `input` and `select` elements
+ * Different widths for mini sized 'input' and 'select' elements
  */
 input.uk-form-width-xsmall {
   width: 50px;
@@ -1542,7 +1544,7 @@ select.uk-form-width-xsmall {
  * 1. Remove default style. Also works in Firefox
  * 2. Style
  * 3. Remove default style in IE 10/11
- * 4. Set `color` for options in the select dropdown, because the inherited `color` might be too light.
+ * 4. Set 'color' for options in the select dropdown, because the inherited 'color' might be too light.
  */
 .uk-select:not([multiple]):not([size]) {
   /* 1 */
@@ -1660,7 +1662,7 @@ select.uk-form-width-xsmall {
 /*
  * Legend
  * 1. Behave like block element
- * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 2. Correct the color inheritance from 'fieldset' elements in IE.
  * 3. Remove padding so people aren't caught out if they zero out fieldsets.
  * 4. Style
  */
@@ -1696,7 +1698,7 @@ select.uk-form-width-xsmall {
 /*
  * 1. Position and resize the form control to always cover its container
  * 2. Required for Firefox for positioning to the left
- * 3. Required for Webkit to make `height` work
+ * 3. Required for Webkit to make 'height' work
  * 4. Hide controle and show cursor
  * 5. Needed for the cursor
  * 6. Clip height caused by 5. Needed for Webkit only
@@ -1743,7 +1745,7 @@ select.uk-form-width-xsmall {
  */
 /* Tablet portrait and smaller */
 @media (max-width: 959px) {
-  /* Behave like `uk-form-stacked` */
+  /* Behave like 'uk-form-stacked' */
   .uk-form-horizontal .uk-form-label {
     display: block;
     margin-bottom: 5px;
@@ -1788,13 +1790,13 @@ select.uk-form-width-xsmall {
   color: #999;
 }
 /*
- * Required for `a`.
+ * Required for 'a'.
  */
 .uk-form-icon:hover {
   color: #666;
 }
 /*
- * Make `input` element clickable through icon, e.g. if it's a `span`
+ * Make 'input' element clickable through icon, e.g. if it's a 'span'
  */
 .uk-form-icon:not(a):not(button):not(input) {
   pointer-events: none;
@@ -1820,18 +1822,18 @@ select.uk-form-width-xsmall {
  ========================================================================== */
 /*
  * 1. Remove margins in Chrome, Safari and Opera.
- * 2. Remove borders for `button`.
+ * 2. Remove borders for 'button'.
  * 3. Remove border-radius in Chrome.
- * 4. Address `overflow` set to `hidden` in IE.
- * 5. Correct `font` properties and `color` not being inherited for `button`.
+ * 4. Address 'overflow' set to 'hidden' in IE.
+ * 5. Correct 'font' properties and 'color' not being inherited for 'button'.
  * 6. Remove the inheritance of text transform in Edge, Firefox, and IE.
  * 7. Style
- * 8. `line-height` is used to create a height because it also centers the text vertically for `a` elements.
- *    Better would be to use height and flexbox to center the text vertically but flexbox doesn't work in Firefox on `button` elements.
+ * 8. 'line-height' is used to create a height because it also centers the text vertically for 'a' elements.
+ *    Better would be to use height and flexbox to center the text vertically but flexbox doesn't work in Firefox on 'button' elements.
  * 9. Align text if button has a width
- * 10. Required for `a`.
+ * 10. Required for 'a'.
  */
-.uk-button {
+.uk-button::shadow {
   /* 1 */
   margin: 0;
   /* 2 */
@@ -1886,14 +1888,14 @@ select.uk-form-width-xsmall {
 /*
  * Default
  */
-.uk-button-default {
+.uk-button-default::shadow {
   background-color: transparent;
   color: #333;
   border: 1px solid #e5e5e5;
 }
 /* Hover + Focus */
-.uk-button-default:hover,
-.uk-button-default:focus {
+.uk-button-default::shadow:hover,
+.uk-button-default::shadow:focus {
   background-color: transparent;
   color: #333;
   border-color: #b2b2b2;
@@ -2057,7 +2059,7 @@ select.uk-form-width-xsmall {
 /* Group
  ========================================================================== */
 /*
- * 1. Using `flex` instead of `inline-block` to prevent whitespace betweent child elements
+ * 1. Using 'flex' instead of 'inline-block' to prevent whitespace betweent child elements
  * 2. Behave like button
  * 3. Create position context
  */
@@ -2080,9 +2082,9 @@ select.uk-form-width-xsmall {
 }
 /*
      * Create position context to superimpose the successor elements border
-     * Known issue: If you use an `a` element as button and an icon inside,
+     * Known issue: If you use an 'a' element as button and an icon inside,
      * the active state will not work if you click the icon inside the button
-     * Workaround: Just use a `button` or `input` element as button
+     * Workaround: Just use a 'button' or 'input' element as button
      */
 .uk-button-group .uk-button:hover,
 .uk-button-group .uk-button:focus,
@@ -2095,7 +2097,7 @@ select.uk-form-width-xsmall {
    Component: Section
  ========================================================================== */
 /*
- * 1. Make it work with `100vh` and height in general
+ * 1. Make it work with '100vh' and height in general
  */
 .uk-section {
   box-sizing: border-box;
@@ -2207,10 +2209,10 @@ select.uk-form-width-xsmall {
    Component: Container
  ========================================================================== */
 /*
- * 1. Box sizing has to be `content-box` so the max-width is always the same and
+ * 1. Box sizing has to be 'content-box' so the max-width is always the same and
  *    unaffected by the padding on different breakpoints. It's important for the size modifiers.
  */
-.uk-container {
+ .uk-container::shadow {
   box-sizing: content-box;
   /* 1 */
   max-width: 1200px;
@@ -2221,14 +2223,14 @@ select.uk-form-width-xsmall {
 }
 /* Phone landscape and bigger */
 @media (min-width: 640px) {
-  .uk-container {
+  .uk-container::shadow {
     padding-left: 30px;
     padding-right: 30px;
   }
 }
 /* Tablet landscape and bigger */
 @media (min-width: 960px) {
-  .uk-container {
+  .uk-container::shadow {
     padding-left: 40px;
     padding-right: 40px;
   }
@@ -2755,7 +2757,7 @@ select.uk-form-width-xsmall {
 /* Media
  ========================================================================== */
 /*
- * Reserved alignment modifier to style the media element, e.g. with `border-radius`
+ * Reserved alignment modifier to style the media element, e.g. with 'border-radius'
  * Implemented by the theme
  */
 /* Title
@@ -2954,7 +2956,7 @@ select.uk-form-width-xsmall {
    Component: Close
  ========================================================================== */
 /*
- * Adopts `uk-icon`
+ * Adopts 'uk-icon'
  */
 .uk-close {
   color: #999;
@@ -2971,7 +2973,7 @@ select.uk-form-width-xsmall {
    Component: Spinner
  ========================================================================== */
 /*
- * Adopts `uk-icon`
+ * Adopts 'uk-icon'
  */
 /* SVG
  ========================================================================== */
@@ -3014,7 +3016,7 @@ select.uk-form-width-xsmall {
    Component: Totop
  ========================================================================== */
 /*
- * Addopts `uk-icon`
+ * Addopts 'uk-icon'
  */
 .uk-totop {
   padding: 5px;
@@ -3035,7 +3037,7 @@ select.uk-form-width-xsmall {
    Component: Marker
  ========================================================================== */
 /*
- * Addopts `uk-icon`
+ * Addopts 'uk-icon'
  */
 .uk-marker {
   padding: 5px;
@@ -3070,7 +3072,7 @@ select.uk-form-width-xsmall {
   margin-bottom: 0;
 }
 /* Close
- * Adopts `uk-close`
+ * Adopts 'uk-close'
  ========================================================================== */
 .uk-alert-close {
   position: absolute;
@@ -3166,7 +3168,7 @@ select.uk-form-width-xsmall {
   align-items: center;
 }
 /*
- * Required for `a`
+ * Required for 'a'
  */
 .uk-badge:hover,
 .uk-badge:focus {
@@ -3381,7 +3383,7 @@ select.uk-form-width-xsmall {
  * 1. Container fits its content
  * 2. Create position context
  * 3. Prevent content overflow
- * 4. Reset `form`
+ * 4. Reset 'form'
  */
 .uk-search {
   /* 1 */
@@ -3411,8 +3413,8 @@ select.uk-form-width-xsmall {
 /*
  * 1. Define consistent box sizing.
  * 2. Address margins set differently in Firefox/IE and Chrome/Safari/Opera.
- * 3. Remove `border-radius` in iOS.
- * 4. Change font properties to `inherit` in all browsers
+ * 3. Remove 'border-radius' in iOS.
+ * 4. Change font properties to 'inherit' in all browsers
  * 5. Show the overflow in Edge.
  * 6. Remove default style in iOS.
  * 7. Vertical alignment
@@ -3450,7 +3452,7 @@ select.uk-form-width-xsmall {
 .uk-search-input::placeholder {
   color: #999;
 }
-/* Icon (Adopts `uk-icon`)
+/* Icon (Adopts 'uk-icon')
  ========================================================================== */
 /*
  * Remove default focus style
@@ -3478,13 +3480,13 @@ select.uk-form-width-xsmall {
   color: #999;
 }
 /*
- * Required for `a`.
+ * Required for 'a'.
  */
 .uk-search .uk-search-icon:hover {
   color: #999;
 }
 /*
- * Make `input` element clickable through icon, e.g. if it's a `span`
+ * Make 'input' element clickable through icon, e.g. if it's a 'span'
  */
 .uk-search .uk-search-icon:not(a):not(button):not(input) {
   pointer-events: none;
@@ -3614,7 +3616,7 @@ select.uk-form-width-xsmall {
 }
 /*
  * Items
- * Must target `a` elements to exclude other elements (e.g. lists)
+ * Must target 'a' elements to exclude other elements (e.g. lists)
  */
 .uk-nav > li > a {
   padding: 5px 0;
@@ -3623,7 +3625,7 @@ select.uk-form-width-xsmall {
  ========================================================================== */
 /*
  * Level 2
- * `ul` needed for higher specificity to override padding
+ * 'ul' needed for higher specificity to override padding
  */
 ul.uk-nav-sub {
   padding: 5px 0 5px 15px;
@@ -3793,7 +3795,7 @@ ul.uk-nav-sub {
  ========================================================================== */
 /*
  * 1. Align navs and items vertically if they have a different height
- * 2. Note: IE 11 requires an extra `div` which affects the center selector
+ * 2. Note: IE 11 requires an extra 'div' which affects the center selector
  */
 .uk-navbar-left,
 .uk-navbar-right,
@@ -3808,7 +3810,7 @@ ul.uk-nav-sub {
  * Horizontal alignment
  * 1. Create position context for centered navbar with sub groups (left/right)
  * 2. Needed for dropdowns because a new position context is created
- *    `z-index` must be smaller than off-canvas
+ *    'z-index' must be smaller than off-canvas
  * 3. Fix text wrapping if the centered section is larger than 50% of the navbar
  * 4. Align sub groups for centered navbar
  */
@@ -3866,7 +3868,7 @@ ul.uk-nav-sub {
 }
 /*
  * Allow items to wrap into the next line
- * Only not `absolute` positioned groups
+ * Only not 'absolute' positioned groups
  */
 .uk-navbar-left,
 .uk-navbar-right,
@@ -3878,7 +3880,7 @@ ul.uk-nav-sub {
  * 1. Center content vertically and horizontally
  * 2. Dimensions
  * 3. Style
- * 4. Required for `a`
+ * 4. Required for 'a'
  */
 .uk-navbar-nav > li > a,
 .uk-navbar-item,
@@ -3943,7 +3945,7 @@ ul.uk-nav-sub {
 }
 /*
  * Icon
- * Adopts `uk-icon`
+ * Adopts 'uk-icon'
  */
 /* Hover + Focus */
 /* Subtitle
@@ -3956,7 +3958,7 @@ ul.uk-nav-sub {
 /* Dropdown
  ========================================================================== */
 /*
- * Adopts `uk-dropdown`
+ * Adopts 'uk-dropdown'
  * 1. Hide by default
  * 2. Set position
  * 3. Set a default width
@@ -3999,7 +4001,7 @@ ul.uk-nav-sub {
 }
 /*
  * Grid
- * Adopts `uk-grid`
+ * Adopts 'uk-grid'
  */
 /* Gutter Horizontal */
 .uk-navbar-dropdown-grid {
@@ -4040,7 +4042,7 @@ ul.uk-nav-sub {
   box-shadow: none;
 }
 /* Dropdown Nav
- * Adopts `uk-nav`
+ * Adopts 'uk-nav'
  ========================================================================== */
 .uk-navbar-dropdown-nav {
   font-size: 0.875rem;
@@ -4164,9 +4166,9 @@ ul.uk-nav-sub {
 /* Items
  ========================================================================== */
 /*
- * Items must target `a` elements to exclude other elements (e.g. dropdowns)
- * Using `:first-child` instead of `a` to support `span` elements for text
- * 1. Prevent gap if child element is `inline-block`, e.g. an icon
+ * Items must target 'a' elements to exclude other elements (e.g. dropdowns)
+ * Using ':first-child' instead of 'a' to support 'span' elements for text
+ * 1. Prevent gap if child element is 'inline-block', e.g. an icon
  * 2. Style
  */
 .uk-subnav > * > :first-child {
@@ -4202,7 +4204,7 @@ ul.uk-nav-sub {
 }
 /*
  * Divider
- * `nth-child` makes it also work without JS if it's only one row
+ * 'nth-child' makes it also work without JS if it's only one row
  */
 .uk-subnav-divider > :nth-child(n+2):not(.uk-first-column)::before {
   content: "";
@@ -4281,7 +4283,7 @@ ul.uk-nav-sub {
 }
 /*
  * Divider
- * `nth-child` makes it also work without JS if it's only one row
+ * 'nth-child' makes it also work without JS if it's only one row
  */
 .uk-breadcrumb > :nth-child(n+2):not(.uk-first-column)::before {
   content: "/";
@@ -4323,7 +4325,7 @@ ul.uk-nav-sub {
 /* Items
  ========================================================================== */
 /*
- * 1. Prevent gap if child element is `inline-block`, e.g. an icon
+ * 1. Prevent gap if child element is 'inline-block', e.g. an icon
  * 2. Style
  */
 .uk-pagination > * > * {
@@ -4390,7 +4392,7 @@ ul.uk-nav-sub {
 /* Items
  ========================================================================== */
 /*
- * Items must target `a` elements to exclude other elements (e.g. dropdowns)
+ * Items must target 'a' elements to exclude other elements (e.g. dropdowns)
  * 1. Center text if a width is set
  * 2. Style
  */
@@ -4482,7 +4484,7 @@ ul.uk-nav-sub {
    Component: Slidenav
  ========================================================================== */
 /*
- * Adopts `uk-icon`
+ * Adopts 'uk-icon'
  */
 .uk-slidenav {
   padding: 5px 10px;
@@ -4812,7 +4814,7 @@ ul.uk-nav-sub {
   display: block;
 }
 /* Nav
- * Adopts `uk-nav`
+ * Adopts 'uk-nav'
  ========================================================================== */
 .uk-dropdown-nav {
   white-space: nowrap;
@@ -4936,8 +4938,8 @@ ul.uk-nav-sub {
 /*
  * 1. Create position context for spinner and close button
  * 2. Dimensions
- * 3. Fix `max-width: 100%` not working in combination with flex and responsive images in IE11
- *    `!important` needed to overwrite `uk-width-auto`. See `#modal-media-image` in tests
+ * 3. Fix 'max-width: 100%' not working in combination with flex and responsive images in IE11
+ *    '!important' needed to overwrite 'uk-width-auto'. See '#modal-media-image' in tests
  * 4. Style
  * 5. Slide-in transition
  */
@@ -5038,7 +5040,7 @@ ul.uk-nav-sub {
   line-height: 1.3;
 }
 /* Close
- * Adopts `uk-close`
+ * Adopts 'uk-close'
  ========================================================================== */
 [class*='uk-modal-close-'] {
   position: absolute;
@@ -5143,8 +5145,8 @@ ul.uk-nav-sub {
  * 3. Color needed for spinner icon
  * 4. Optimize animation
  * 5. Responsiveness
- *    Using `vh` for `max-height` to fix image proportions after resize in Safari and Opera
- *    Using `vh` and `vw` to make responsive image work in IE11
+ *    Using 'vh' for 'max-height' to fix image proportions after resize in Safari and Opera
+ *    Using 'vh' and 'vw' to make responsive image work in IE11
  */
 .uk-lightbox-items > * {
   /* 1 */
@@ -5262,7 +5264,7 @@ ul.uk-nav-sub {
 /*
  * 1. Position items above each other
  * 2. Take the full width
- * 3. Clip child elements, e.g. for `uk-cover`
+ * 3. Clip child elements, e.g. for 'uk-cover'
  * 4. Optimize animation
  * 5. Disable horizontal panning gestures in IE11 and Edge
  */
@@ -5310,7 +5312,7 @@ ul.uk-nav-sub {
  ========================================================================== */
 /*
  * 1. Optimize animation
- * 2. Create a containing block. In Safari it's neither created by `transform` nor `will-change`.
+ * 2. Create a containing block. In Safari it's neither created by 'transform' nor 'will-change'.
  */
 .uk-slider-items {
   /* 1 */
@@ -5486,7 +5488,7 @@ ul.uk-nav-sub {
   left: auto;
 }
 /* Close
- * Adopts `uk-close`
+ * Adopts 'uk-close'
  ========================================================================== */
 .uk-offcanvas-close {
   position: absolute;
@@ -5498,8 +5500,8 @@ ul.uk-nav-sub {
 /* Overlay
  ========================================================================== */
 /*
- * Overlay the whole page. Needed for the `::before`
- * 1. Using `100vw` so no modification is needed when off-canvas is flipped
+ * Overlay the whole page. Needed for the '::before'
+ * 1. Using '100vw' so no modification is needed when off-canvas is flipped
  * 2. Allow for closing with swipe gesture on devices with pointer events.
  */
 .uk-offcanvas-overlay {
@@ -5532,7 +5534,7 @@ ul.uk-nav-sub {
  ========================================================================== */
 /*
  * Prevent horizontal scrollbar when the content is slide-out
- * Has to be on the `html` element too to make it work on the `body`
+ * Has to be on the 'html' element too to make it work on the 'body'
  */
 .uk-offcanvas-page,
 .uk-offcanvas-container {
@@ -5548,8 +5550,8 @@ ul.uk-nav-sub {
  ========================================================================== */
 /*
  * Prepare slide-out animation (Used in reveal and push mode)
- * Using `position: left` instead of `transform` because position `fixed` elements like sticky navbars
- * lose their fixed state and behaves like `absolute` within a transformed container
+ * Using 'position: left' instead of 'transform' because position 'fixed' elements like sticky navbars
+ * lose their fixed state and behaves like 'absolute' within a transformed container
  * Note: JS sets a fixed width and height so the page can slide-out without shrinking
  * 1. Smooth scrolling
  */
@@ -5672,8 +5674,8 @@ ul.uk-nav-sub {
 /* Items
  ========================================================================== */
 /*
- * Items must target `a` elements to exclude other elements (e.g. dropdowns)
- * 1. Prevent gap if child element is `inline-block`, e.g. an icon
+ * Items must target 'a' elements to exclude other elements (e.g. dropdowns)
+ * 1. Prevent gap if child element is 'inline-block', e.g. an icon
  * 2. Style
  */
 .uk-iconnav > * > a {
@@ -5769,7 +5771,7 @@ ul.uk-nav-sub {
   cursor: pointer;
 }
 /* Close
- * Adopts `uk-close`
+ * Adopts 'uk-close'
  ========================================================================== */
 .uk-notification-close {
   display: none;
@@ -6134,7 +6136,7 @@ ul.uk-nav-sub {
 /* Enable animation only on hover
 ========================================================================== */
 /*
- * Note: Firefox and IE needs this because animations are not triggered when switching between display `none` and `block`
+ * Note: Firefox and IE needs this because animations are not triggered when switching between display 'none' and 'block'
  */
 .uk-animation-toggle:not(:hover):not(.uk-hover) [class*='uk-animation-'] {
   animation-name: none;
@@ -6416,11 +6418,11 @@ ul.uk-nav-sub {
   width: 1px;
 }
 /*
- * 1. Make `width: 1px` work, because according to the spec flex items won’t shrink
+ * 1. Make 'width: 1px' work, because according to the spec flex items won’t shrink
  *    below their minimum content size. To change this, set the min-width.
  *    Only needed for Firefox. All other browsers ignore this.
  *
- * 2. `width` is ignored when wrapping flex items in Safari
+ * 2. 'width' is ignored when wrapping flex items in Safari
  *    https://github.com/philipwalton/flexbugs#11-min-and-max-size-declarations-are-ignored-when-wrapping-flex-items
  */
 .uk-child-width-expand > :not([class*='uk-width']) {
@@ -6561,7 +6563,7 @@ ul.uk-nav-sub {
 /* Single Widths
  ========================================================================== */
 /*
- * 1. `max-width` is needed for the pixel-based classes
+ * 1. 'max-width' is needed for the pixel-based classes
  */
 [class*='uk-width'] {
   box-sizing: border-box;
@@ -6942,7 +6944,7 @@ ul.uk-nav-sub {
 }
 /*
  * Pixel
- * Useful for `overflow: auto`
+ * Useful for 'overflow: auto'
  */
 .uk-height-small {
   height: 150px;
@@ -7154,10 +7156,10 @@ td.uk-text-truncate {
 }
 /*
  * 1. Wrap long words onto the next line and break them if they are too long to fit
- * 2. Legacy `word-wrap` as fallback for `overflow-wrap`
- * 3. Fix `overflow-wrap` which doesn't work with table cells in Chrome, Opera, IE11 and Edge
- *    Must use `break-all` to support IE11 and Edge
- * Note: Not using `hyphens: auto;` because it hyphenates text even if not needed
+ * 2. Legacy 'word-wrap' as fallback for 'overflow-wrap'
+ * 3. Fix 'overflow-wrap' which doesn't work with table cells in Chrome, Opera, IE11 and Edge
+ *    Must use 'break-all' to support IE11 and Edge
+ * Note: Not using 'hyphens: auto;' because it hyphenates text even if not needed
  */
 .uk-text-break {
   /* 1 */
@@ -7306,7 +7308,7 @@ td.uk-text-break {
  * Works with iframes and embedded content
  * 1. Reset responsiveness for embedded content
  * 2. Center object
- * Note: Percent values on the `top` property only works if this element
+ * Note: Percent values on the 'top' property only works if this element
  *       is absolute positioned or if the container has a height
  */
 .uk-cover {
@@ -7400,7 +7402,7 @@ iframe.uk-cover {
 /* Attachment
  ========================================================================== */
 /*
- * 1. Fix bug introduced in Chrome 67: the background image is not visible if any element on the page uses `translate3d`
+ * 1. Fix bug introduced in Chrome 67: the background image is not visible if any element on the page uses 'translate3d'
  */
 .uk-background-fixed {
   background-attachment: fixed;
@@ -7408,7 +7410,7 @@ iframe.uk-cover {
   backface-visibility: hidden;
 }
 /*
- * Exclude touch devices because `fixed` doesn't work on iOS and Android
+ * Exclude touch devices because 'fixed' doesn't work on iOS and Android
  */
 @media (pointer: coarse) {
   .uk-background-fixed {
@@ -7587,7 +7589,7 @@ iframe.uk-cover {
    Component: SVG
  ========================================================================== */
 /*
- * 1. Fill all SVG elements with the current text color if no `fill` attribute is set
+ * 1. Fill all SVG elements with the current text color if no 'fill' attribute is set
  * 2. Set the fill and stroke color of all SVG elements to the current text color
  * 3. Fix for uppercase attribute names in Edge. Will be fixed in Windows 10 builds 16251+
  */
@@ -7647,9 +7649,9 @@ iframe.uk-cover {
 /* Clearfix
  ========================================================================== */
 /*
- * 1. `table-cell` is used with `::before` because `table` creates a 1px gap when it becomes a flex item, only in Webkit
- * 2. `table` is used again with `::after` because `clear` only works with block elements.
- * Note: `display: block` with `overflow: hidden` is currently not working in the latest Safari
+ * 1. 'table-cell' is used with '::before' because 'table' creates a 1px gap when it becomes a flex item, only in Webkit
+ * 2. 'table' is used again with '::after' because 'clear' only works with block elements.
+ * Note: 'display: block' with 'overflow: hidden' is currently not working in the latest Safari
  */
 /* 1 */
 .uk-clearfix::before {
@@ -7684,7 +7686,7 @@ iframe.uk-cover {
 }
 /*
  * Enable scrollbars if content is clipped
- * Note: Firefox ignores `padding-bottom` for the scrollable overflow https://bugzilla.mozilla.org/show_bug.cgi?id=748518
+ * Note: Firefox ignores 'padding-bottom' for the scrollable overflow https://bugzilla.mozilla.org/show_bug.cgi?id=748518
  */
 .uk-overflow-auto {
   overflow: auto;
@@ -7743,7 +7745,7 @@ iframe.uk-cover {
  ========================================================================== */
 /*
  * Preserve original dimensions
- * Because `img, `video`, `canvas` and  `audio` are already responsive by default, see Base component
+ * Because 'img, 'video', 'canvas' and  'audio' are already responsive by default, see Base component
  */
 .uk-preserve-width,
 .uk-preserve-width audio,
@@ -7755,15 +7757,15 @@ iframe.uk-cover {
 }
 /*
  * Responsiveness
- * Corrects `max-width` and `max-height` behavior if padding and border are used
+ * Corrects 'max-width' and 'max-height' behavior if padding and border are used
  */
 .uk-responsive-width,
 .uk-responsive-height {
   box-sizing: border-box;
 }
 /*
- * 1. Set a maximum width. `important` needed to override `uk-preserve-width img`
- * 2. Auto scale the height. Only needed if `height` attribute is present
+ * 1. Set a maximum width. 'important' needed to override 'uk-preserve-width img'
+ * 2. Auto scale the height. Only needed if 'height' attribute is present
  */
 .uk-responsive-width {
   /* 1 */
@@ -7773,8 +7775,8 @@ iframe.uk-cover {
 }
 /*
  * 1. Set a maximum height. Only works if the parent element has a fixed height
- * 2. Auto scale the width. Only needed if `width` attribute is present
- * 3. Reset max-width, which `img, `video`, `canvas` and  `audio` already have by default
+ * 2. Auto scale the width. Only needed if 'width' attribute is present
+ * 3. Reset max-width, which 'img, 'video', 'canvas' and  'audio' already have by default
  */
 .uk-responsive-height {
   /* 1 */
@@ -7793,7 +7795,7 @@ iframe.uk-cover {
   border-radius: 5px;
 }
 /*
- * Fix `overflow: hidden` to be ignored with border-radius and CSS transforms in Webkit
+ * Fix 'overflow: hidden' to be ignored with border-radius and CSS transforms in Webkit
  */
 .uk-inline-clip[class*='uk-border-'] {
   -webkit-transform: translateZ(0);
@@ -7835,8 +7837,8 @@ iframe.uk-cover {
 /*
  * 1. Set position.
  * 2. Set style
- * 3. Blur doesn't work on pseudo elements with negative `z-index` in Edge.
- *    Solved by using `before` and add position context to child elements.
+ * 3. Blur doesn't work on pseudo elements with negative 'z-index' in Edge.
+ *    Solved by using 'before' and add position context to child elements.
  */
 @supports (filter: blur(0)) {
   .uk-box-shadow-bottom {
@@ -7866,12 +7868,12 @@ iframe.uk-cover {
 /* Drop cap
  ========================================================================== */
 /*
- * 1. Firefox doesn't apply `::first-letter` if the first letter is inside child elements
+ * 1. Firefox doesn't apply '::first-letter' if the first letter is inside child elements
  *    https://bugzilla.mozilla.org/show_bug.cgi?id=214004
- * 2. In Firefox, a floating `::first-letter` doesn't have a line box and there for no `line-height`
+ * 2. In Firefox, a floating '::first-letter' doesn't have a line box and there for no 'line-height'
  *    https://bugzilla.mozilla.org/show_bug.cgi?id=317933
- * 3. Caused by 1.: Edge creates two nested `::first-letter` containers, one for each selector
- *    This doubles the `font-size` exponential when using the `em` unit.
+ * 3. Caused by 1.: Edge creates two nested '::first-letter' containers, one for each selector
+ *    This doubles the 'font-size' exponential when using the 'em' unit.
  */
 .uk-dropcap::first-letter,
 .uk-dropcap > p:first-of-type::first-letter {
@@ -7898,7 +7900,7 @@ iframe.uk-cover {
 /* Logo
  ========================================================================== */
 /*
- * 1. Required for `a`
+ * 1. Required for 'a'
  */
 .uk-logo {
   font-size: 1.5rem;
@@ -8530,7 +8532,7 @@ iframe.uk-cover {
 }
 /* Edges
  ========================================================================== */
-/* Don't use `width: 100%` because it is wrong if the parent has padding. */
+/* Don't use 'width: 100%' because it is wrong if the parent has padding. */
 .uk-position-top {
   top: 0;
   left: 0;
@@ -8720,9 +8722,9 @@ iframe.uk-cover {
    Component: Transition
  ========================================================================== */
 /*
- * Using multiple selectors to exclude `uk-transition-toggle`
- * Note: Transitions don't work with `uk-postion-center-*` classes because they also use `transform`
- *       Just put the transition in an extra `div`
+ * Using multiple selectors to exclude 'uk-transition-toggle'
+ * Note: Transitions don't work with 'uk-postion-center-*' classes because they also use 'transform'
+ *       Just put the transition in an extra 'div'
  */
 .uk-transition-fade,
 [class*='uk-transition-scale'],
@@ -8748,7 +8750,7 @@ iframe.uk-cover {
 }
 /*
  * Scale
- * Note: Using `scale3d` for better image rendering
+ * Note: Using 'scale3d' for better image rendering
  */
 [class*='uk-transition-scale'] {
   opacity: 0;
@@ -8839,7 +8841,7 @@ iframe.uk-cover {
  ========================================================================== */
 /*
  * Hidden
- * `hidden` attribute also set here to make it stronger
+ * 'hidden' attribute also set here to make it stronger
  */
 [hidden],
 .uk-hidden {
@@ -8905,7 +8907,7 @@ iframe.uk-cover {
  ========================================================================== */
 /*
  * Hidden
- * Can't use `display: hidden` because it's not focusable. This is accessible through keyboard.
+ * Can't use 'display: hidden' because it's not focusable. This is accessible through keyboard.
  */
 .uk-visible-toggle:not(:hover):not(.uk-hover) .uk-hidden-hover:not(:focus) {
   position: absolute !important;
@@ -8917,7 +8919,7 @@ iframe.uk-cover {
 }
 /*
  * Invisible
- * Can't use `visibility: hidden` because it's not focusable. This is accessible through keyboard.
+ * Can't use 'visibility: hidden' because it's not focusable. This is accessible through keyboard.
  */
 .uk-visible-toggle:not(:hover):not(.uk-hover) .uk-invisible-hover:not(:focus) {
   opacity: 0 !important;
@@ -8935,7 +8937,7 @@ iframe.uk-cover {
 }
 /*
  * Hide if primary pointing device is accurate, e.g. mouse.
- * 1. Fallback for IE11 and Firefox, because `pointer` is not supported
+ * 1. Fallback for IE11 and Firefox, because 'pointer' is not supported
  * 2. Reset if supported
  */
 /* 1 */
@@ -8952,8 +8954,8 @@ iframe.uk-cover {
  ========================================================================== */
 /*
  * Implemented class depends on the general theme color
- * `uk-light` is for light colors on dark backgrounds
- * `uk-dark` is or dark colors on light backgrounds
+ * 'uk-light' is for light colors on dark backgrounds
+ * 'uk-dark' is or dark colors on light backgrounds
  */
 .uk-light,
 .uk-section-primary:not(.uk-preserve-color),
