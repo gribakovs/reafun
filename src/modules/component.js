@@ -28,23 +28,23 @@ let define = (tag, oninit, onrender, onupdate, onevent, path, message) => {
             // let uikitLoader = document.createElement ('script')
             //      uikitLoader.src = "./scripts/uikitloader.js"
 
-            let shadow = this.attachShadow({mode: "open"})
-            let props = oninit(shadow)
+            let host = this.attachShadow({mode: "open"})
+            let props = oninit(host)
             let model = Model.create(props)
             let children = onrender(model)
 
             
 
 
-                shadow.appendChild(style)   
-                shadow.appendChild(fonts)
+                host.appendChild(style)   
+                host.appendChild(fonts)
 
-                append(shadow,children)
-                // shadow.appendChild(uikitScript)
-                // shadow.appendChild(uikitIcons)
-                //shadow.appendChild(uikitLoader)
+                append(host,children)
+                // host.appendChild(uikitScript)
+                // host.appendChild(uikitIcons)
+                //host.appendChild(uikitLoader)
 
-                console.log(shadow.innerHTML)
+                console.log(host.innerHTML)
 
             let update = (e) => {
                 let newmodel = onupdate(e)
