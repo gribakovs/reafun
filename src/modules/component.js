@@ -25,13 +25,16 @@ let define = (tag, oninit, onrender, onupdate, onevent, path, message) => {
                  fonts.src = "https://use.fontawesome.com/releases/v5.1.0/js/all.js"
                  fonts.defer = true
 
-            let uikitLoader = document.createElement ('script')
-                 uikitLoader.src = "./scripts/uikitloader.js"
+            // let uikitLoader = document.createElement ('script')
+            //      uikitLoader.src = "./scripts/uikitloader.js"
 
             let shadow = this.attachShadow({mode: "open"})
             let props = oninit(shadow)
             let model = Model.create(props)
             let children = onrender(model)
+
+            
+
 
                 shadow.appendChild(style)   
                 shadow.appendChild(fonts)
@@ -39,7 +42,7 @@ let define = (tag, oninit, onrender, onupdate, onevent, path, message) => {
                 append(shadow,children)
                 // shadow.appendChild(uikitScript)
                 // shadow.appendChild(uikitIcons)
-                shadow.appendChild(uikitLoader)
+                //shadow.appendChild(uikitLoader)
 
                 console.log(shadow.innerHTML)
 
@@ -58,7 +61,7 @@ let define = (tag, oninit, onrender, onupdate, onevent, path, message) => {
 
     }
     customElements.define(tag, Component)
-    return (props, children) => node (tag, props, children)
+    return (...attrs) => node (tag, attrs)
 }
 
 export {define}

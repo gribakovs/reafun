@@ -1,12 +1,12 @@
-import UIkit from 'uikit';
-import Icons from 'uikit/dist/js/uikit-icons';
+// import UIkit from 'uikit';
+// import Icons from 'uikit/dist/js/uikit-icons';
 
 
-window.UIkit = UIkit
+// window.UIkit = UIkit
 // loads the Icon plugin
-window.UIkit.use(Icons);
+// window.UIkit.use(Icons);
 
-// // components can be called from the imported UIkit reference
+//components can be called from the imported UIkit reference
 //UIkit.notification('Hello world.');
 
 import * as App from "./components/home.ui.js"

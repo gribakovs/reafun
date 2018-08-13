@@ -1,6 +1,6 @@
 
-import {html} from "../modules/html.js"
-import {span,div,a,h3,button,section,p,h1,strong,append,assign} from "../modules/elements.js"
+import {html,aClass} from "../modules/html.js"
+import {attr,img,style,header,nav,ul,li,main,footer, span,div,a,h3,button,section,p,h1,strong,append,assign, h2} from "../modules/elements.js"
 import {define} from "../modules/component.js"
 
 let oninit = (host) => {
@@ -63,65 +63,199 @@ let oninit = (host) => {
 
 
 let onrender = (model) => {
-    let title = h1 ([["class","title"]],["Hello World!"])
-        // title.textContent = "Hello World!"
 
-    let subtitle = p ([[ "class","subtitle" ]],["My first website with ", strong ([],["Bulma"]) ])
-        // subtitle.textContent = "My first website with Bulma"
+           
+    // let bulma = div () ()
+    //     bulma.innerHTML = html`
+    //      <section class="section">
+    //         <div class="container">
+    //         <h1 class="title">
+    //             Hello World
+    //         </h1>
+    //         <p class="subtitle">
+    //             My first website with <strong>Bulma</strong>!
+    //         </p>
+    //         </div>
+    //     </section>
+    // `
 
-    let bulma = div ( [],[] )
-        bulma.innerHTML = html`
-         <section class="section">
-            <div class="container">
-            <h1 class="title">
-                Hello World
-            </h1>
-            <p class="subtitle">
-                My first website with <strong>Bulma</strong>!
-            </p>
-            </div>
-        </section>
-    `
+    let title = 
+        h1  ( attr ("class","title") 
+            )
+            ( "Hello World",":", "Hello World")
 
-    let mybulma = div ( [],[] )
-        mybulma.appendChild(
-            section (
-                [ [ "class", "section"]
-                ],[ div (
-                      [ ["class","container"] 
-                      ],[ title, subtitle
-                      ]
+    let subtitle = 
+        p   ( attr ("class","subtitle") )
+            ( "My first website with "
+            , strong () ("Bulma")
+            )
+
+    let mybulma = 
+        div 
+            () 
+            ( section 
+                ( attr ("class","section") )
+                ( div ( attr ("class","container") )
+                      ( title, subtitle )
+                )
+            )
+    let styles = `
+            main {
+                font-size: 28px;
+            }
+
+            ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                background-color: #333;
+                position: -webkit-sticky; /* Safari */
+                position: sticky;
+                top: 0;
+            }
+
+            li {
+                float: left;
+            }
+
+            li a {
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+
+            li a:hover {
+                background-color: #111;
+            }
+
+            .active {
+                background-color: #4CAF50;
+            }
+        `
+    let appStyle = style () (styles)
+ 
+    let appHeaderTitle = "REAFUN"
+    let appHeaderSubtitle = "reactive web framework"
+    let appHeader = 
+            header  
+                () 
+                ( h1 () 
+                        ( appHeaderTitle
+                        , h2 () (appHeaderSubtitle) 
+                        ) 
+                )
+
+    let appNavMenuItems = 
+        Object.entries (
+            {
+                "item1": ["active","#home","Home"],
+                "item2": ["","#contacts","Contacts"]
+            }
+        )
+        .map (
+            ([key,value]) => 
+                li  ()
+                    ( a ( attr ("class",value[0])
+                        , attr ("href",`#${key}`)
+                        )
+                        ( value[2]
+                        )
                     )
-    
-                ]
-              )
+
         )
 
-    let children = 
-        [ bulma
-        , mybulma
-        , div (
-            [ ["class","uk-container"]
-            ],[ div (
-                  [ ["class","uk-card uk-card-body uk-card-primary"]
-                  ],[ assign (
-                        h3 (
-                            [ ["class","uk-card-title"]
-                            ],[]
-                        ), { textContent: "Example headline" }
-                    )
-                    , assign (
-                        button (
-                            [ ["class","uk-button uk-button-default"] 
-                            , ["uk-tooltip", "title: Hello World"]                          
-                            ],[]
-                        ), { textContent: "Hover" }
-                      )
-                    ]                
-                )
-              ]
+    console.log (appNavMenuItems)
+
+    let appNavMenu = 
+        ul () (appNavMenuItems)
+
+
+    let appNavLogo = 
+        a ( attr ("class", "navbar-item")
+          , attr ("href","https://bulma.io") 
           )
-        // , div (   
+          ( img ( attr ("src","https://bulma.io/images/bulma-logo.png")
+                , attr ("alt","Bulma: a modern CSS framework based on Flexbox")
+                , attr ("width","112")
+                , attr ("height", "28")
+                )
+                ()
+          )
+
+    let appNavBurger = 
+        a   ( attr  ("role","button") 
+            , attr  ("class","navbar-burger") 
+            , attr  ("aria-label","menu")
+            , attr  ("aria-expanded","false")
+            )   
+            ( span  ( attr ("aria-hidden","true") )
+                    ()
+            , span  ( attr ("aria-hidden","true") )
+                    ()
+            , span  ( attr ("aria-hidden","true") )
+                    ()
+            )
+        // appNavBurger.setAttribute ("isActive", false)
+        // appNavBurger.onclick = () => {
+        //     appNavBurger.setAttribute ("isActive", !appNavBurger.getAttribute ("isActive") )
+        //     appNavBurger.isActive
+        //         ? appNavBurger.className = "navbar-burger is-active"
+        //         : appNavBurger.className = "navbar-burger"
+        // }
+
+    let appNavBrand = 
+        div ( attr ( "class", "navbar-brand") )
+            () // appNavLogo, appNavBurger )
+    
+    let appNav =  
+        nav ( attr ("class", "navbar")
+            , attr ("role", "navigation")
+            , attr ("aria-label", "main navigation")
+            )
+            ()
+            // ( appNavBrand , appNavMenu )
+
+    let appMain = main () ()
+    // ("Main")
+
+    let appFooter = footer () ()
+    // ("Footer")
+
+
+
+    let children = 
+        [ //appStyle
+        //   appHeader
+        // , appNav
+        // , appMain
+        // , appFooter
+        // // , bulma
+        // , mybulma
+        // , div (
+        //     [ ["class","uk-container"]
+        //     ],[ div (
+        //           [ ["class","uk-card uk-card-body uk-card-primary"]
+        //           ],[ assign (
+        //                 h3 (
+        //                     [ ["class","uk-card-title"]
+        //                     ],[]
+        //                 ), { textContent: "Example headline" }
+        //             )
+        //             , assign (
+        //                 button (
+        //                     [ ["class","uk-button uk-button-default"] 
+        //                     , ["uk-tooltip", "title: Hello World"]                          
+        //                     ],[]
+        //                 ), { textContent: "Hover" }
+        //               )
+        //             ]                
+        //         )
+        //       ]
+        //   )
+        // // , div (   
         //     [ ["class", "uk-navbar-container"]
         //     , ["uk-navbar", ""]
         //     ],[]
@@ -136,32 +270,24 @@ let onrender = (model) => {
         //         )
         //     ]
         //   )
-        , div (   
-            [],
-            [ span (
-                [ ["id", "title"]
-                , ["text", "title"]
-                ], []
-              )
-            , div (
-                [], 
-                [ span (  
-                    [ ["id", "description"]
-                    , ["textContent", "description"]
-                    ]
-                    , []
-                  )
-                , div (
-                    [ ["id", "model"]
-                    , ["text", "model"]
-                    ]
-                    , []
-                  )
-                ]
-              )
-            ]
-          )                           
+        // ,
+         div 
+            ()
+            ( span 
+                ( attr ("id", "title") )
+                ( "title" )
+            , div 
+                ()
+                ( span 
+                    ( attr ("id", "description") )
+                    ( "description" )
+                , div 
+                    ( attr ("id", "model") )
+                    ( "model")
+                )
+            )
         ]
+ 
     return children
 }
 
@@ -195,7 +321,7 @@ let render = (params) => {
     append(
         document.body, 
         [
-            app ([],[])
+            app () ()
         ]
     ) 
 

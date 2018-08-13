@@ -5,6 +5,7 @@
   "license": "MIT",
   "scripts": {
     "build": "webpack -p",
+    "watch": "webpack --watch",
     "start": "webpack-dev-server --content-base dist/"
   },
   "dependencies": {
