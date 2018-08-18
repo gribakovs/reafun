@@ -16,7 +16,6 @@ let append = (parent, nodes) => {
 }
 
 let node = (tag, ...attrs) => {
-    console.log(tag)
     let obj = document.createElement(tag)
 
     attrs.forEach( ([attr,value]) => obj.setAttribute(attr,value) )

@@ -50,17 +50,6 @@ let oninit = (host) => {
     //     </div>
     // </div>
 
-//     <section class="section">
-//     <div class="container">
-//       <h1 class="title">
-//         Hello World
-//       </h1>
-//       <p class="subtitle">
-//         My first website with <strong>Bulma</strong>!
-//       </p>
-//     </div>
-//   </section>
-
 
 let onrender = (model) => {
 
@@ -166,8 +155,6 @@ let onrender = (model) => {
                     )
 
         )
-
-    console.log (appNavMenuItems)
 
     let appNavMenu = 
         ul () (appNavMenuItems)
@@ -292,7 +279,6 @@ let onrender = (model) => {
 }
 
 let onupdate = (e) => {
-    console.log (`message received from worker`)
     let newmodel = { 
             title: e.data.title,
             description: e.data.description,
@@ -316,17 +302,8 @@ let render = (params) => {
     }
 
     let app = define("rf-app", oninit, onrender, onupdate, onevent, "./scripts/homeapi.js", message)
-    console.log (app)
 
-    append(
-        document.body, 
-        [
-            app () ()
-        ]
-    ) 
-
-    console.log(document.body.innerHTML)
-
+    append ( document.body, [ app () () ]) 
 
 }
 

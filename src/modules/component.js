@@ -44,7 +44,6 @@ let define = (tag, oninit, onrender, onupdate, onevent, path, message) => {
                 // host.appendChild(uikitIcons)
                 //host.appendChild(uikitLoader)
 
-                console.log(host.innerHTML)
 
             let update = (e) => {
                 let newmodel = onupdate(e)
