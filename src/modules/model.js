@@ -15,7 +15,10 @@ class Model {
                         console.log (Lodash.isEqual (props[prop].value, value) )
                         if (! Lodash.isEqual (props[prop].value, value) ) {
                             props[prop].value = value
-                            props[prop].set(value)
+                            props[prop].listeners.forEach(
+                                listener => listener(value)
+                            )
+                            
                         }
                     }
                 }

@@ -28,21 +28,21 @@ let define = (tag, oninit, onrender, onupdate, onevent, path, message) => {
             // let uikitLoader = document.createElement ('script')
             //      uikitLoader.src = "./scripts/uikitloader.js"
 
-            let host = this.attachShadow({mode: "open"})
-            let props = oninit(host)
+            let container = this.attachShadow({mode: "open"})
+            let props = oninit(container)
             let model = Model.create(props)
             let children = onrender(model)
 
             
 
 
-                host.appendChild(style)   
-                host.appendChild(fonts)
+                container.appendChild(style)   
+                container.appendChild(fonts)
 
-                append(host,children)
-                // host.appendChild(uikitScript)
-                // host.appendChild(uikitIcons)
-                //host.appendChild(uikitLoader)
+                append(container,children)
+                // container.appendChild(uikitScript)
+                // container.appendChild(uikitIcons)
+                //container.appendChild(uikitLoader)
 
 
             let update = (e) => {

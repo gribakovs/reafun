@@ -3,31 +3,38 @@ import {html,aClass} from "../modules/html.js"
 import {attr,img,style,header,nav,ul,li,main,footer, span,div,a,h3,button,section,p,h1,strong,append,assign, h2} from "../modules/elements.js"
 import {define} from "../modules/component.js"
 
-let oninit = (host) => {
+let oninit = (container) => {
     let props = {
         title: {
             value: "title",
-            set: (value) => {                    
-                let id = "title"
-                let el = host.getElementById(id)
-                el.textContent = value            
-            }
+            listeners: [
+                (value) => {                    
+                    let id = "title"
+                    let el = container.getElementById(id)
+                    el.textContent = value
+                }
+            ]            
+
         },
         description: {
             value: "description",
-            set: (value) => {                    
-                let id = "description"
-                let el = host.getElementById(id)
-                el.textContent = value            
-            }
+            listeners: [
+                (value) => {                    
+                    let id = "description"
+                    let el = container.getElementById(id)
+                    el.textContent = value            
+                }
+            ]
         },
         model: {
             value: "model",
-            set: (value) => {                    
-                let id = "model"
-                let el = host.getElementById(id)
-                el.textContent = value            
-            }
+            listeners: [
+               (value) => {                    
+                    let id = "model"
+                    let el = container.getElementById(id)
+                    el.textContent = value            
+                }
+            ]
         }
     }
 
